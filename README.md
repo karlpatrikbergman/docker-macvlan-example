@@ -32,6 +32,7 @@ IP4.DNS[2]:                             192.168.201.12
 IP4.DOMAIN[1]:                          transmode.se
 ```
 Now I know the gateway for the network where my vm resides, and also the subnet from which to find  available ip addresses.  
+  &nbsp;
 *** 
 ## Create docker macvlan network
 ### Docker Machine
