@@ -56,7 +56,7 @@ docker network create -d macvlan \
 ```
 Run it:
 ```shell
-$ create_macvlan.sh*
+$ create_macvlan.sh
 ```
 Now we can run and attach an XTM docker container to network
 ```shell
