@@ -1,5 +1,9 @@
 # Docker Macvlan Driver Example
 
+## Scenario
+Run one or more XTM docker containers on your virtual machine (ex. pabe_test on tnm-vm7)  
+Give each of the containers a unique ip number, available on the network.
+
 ## Network Information
 
 ### tnm-vm7 = the physical machine
