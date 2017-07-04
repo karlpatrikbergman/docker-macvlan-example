@@ -46,14 +46,19 @@ Connect current shell to machine (so my docker client can talk to it)
 $ eval "$(docker-machine env pabe-test-machine)"
 ```
 Now we should be able to create a macvlan network on host (the vm pabe_test)
+Run bash script "create_macvlan.sh". It looks as follows:
 ```shell
-$ docker network create -d macvlan \
-        --subnet=172.16.15.0/22 \
-        --gateway=172.16.12.1 \
--o macvlan_mode=bridge \
+docker network create -d macvlan \
+    --subnet=172.16.15.0/22 \
+    --gateway=172.16.12.1 \
+    -o macvlan_mode=bridge \
     -o parent=eth0 macvlan70
 ```
-Attached XTM docker container to network
+Run it:
+```shell
+$ create_macvlan.sh*
+```
+Now we can run and attach an XTM docker container to network
 ```shell
 $ docker run --name=node1--net=macvlan70 -d -p 80:80 se-artif-prd.infinera.com/tm3k/trunk-hostenv:latest
 ```
