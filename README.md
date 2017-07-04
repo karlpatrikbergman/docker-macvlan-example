@@ -32,6 +32,7 @@ IP4.DNS[2]:                             192.168.201.12
 IP4.DOMAIN[1]:                          transmode.se
 ```
 Now I know the gateway for the network where my vm resides, and also the subnet from which to find  available ip addresses.
+## Create docker macvlan network
 ### Docker Machine
 I have used docker machine to install docker engine on my vm "pabe_test", and will use it to execute docker commands remotely.
 An alternative is to ssh to the vm, install docker and run commands.  
