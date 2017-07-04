@@ -27,6 +27,8 @@ IP4.DOMAIN[1]:                          transmode.se
 ```
 Now I know the gateway for the network where my vm resides, and also the subnet from which to find  available ip addresses.
 ### Docker Machine
+I have used docker machine to install docker engine on my vm "pabe_test", and will use it to execute docker commands remotely.
+An alternative is to ssh to the vm, install docker and run commands.  
 Go to local directory of this project:
 ```shell
 [root@pabe-test-machine ~]# exit
@@ -34,7 +36,7 @@ logout
 Connection to 172.16.15.230 closed. 
 $ cd /usr/local/src/docker-macvlan-example
 ```
-I have previously created a docker-machine on the vm pabe_test. It can be listed like so:
+List my docker-machines:
 ```shell
 $ docker-machine ls
 NAME                ACTIVE   DRIVER       STATE     URL                        SWARM   DOCKER        ERRORS
