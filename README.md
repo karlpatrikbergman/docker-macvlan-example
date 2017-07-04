@@ -25,7 +25,7 @@ IP4.DNS[1]:                             192.168.201.2
 IP4.DNS[2]:                             192.168.201.12
 IP4.DOMAIN[1]:                          transmode.s
 ```
-Know I know the gateway for the network where my vm resides, and also the subnet from which to find  available ip addresses.
+Now I know the gateway for the network where my vm resides, and also the subnet from which to find  available ip addresses.
 ### Docker Machine
 Go to local directory of this project:
 ```shell
