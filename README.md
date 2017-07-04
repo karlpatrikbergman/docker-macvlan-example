@@ -14,6 +14,8 @@ IP4.DNS[2]:                             192.168.201.12
 IP4.GATEWAY:                            172.16.12.1
 ```
 ### pabe_test = my "private" vm running on tnm-vm7
+Using [this](https://atlas.transmode.se/bitbucket/users/pabe/repos/libvirt-examples/browse/get_domain_ip_address.sh) 
+script I find that the ip address of my virtual machine is 172.16.15.230.
 ```shell
 $ ssh ssh root@172.16.15.230
 [root@pabe-test-machine ~]# nmcli device show eth0 | grep IP4
@@ -23,6 +25,7 @@ IP4.DNS[1]:                             192.168.201.2
 IP4.DNS[2]:                             192.168.201.12
 IP4.DOMAIN[1]:                          transmode.s
 ```
+Know I know the gateway for the network where my vm resides, and also the subnet from which to find  available ip addresses.
 ### Docker Machine
 Go to local directory of this project:
 ```shell
