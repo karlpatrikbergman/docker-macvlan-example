@@ -23,12 +23,15 @@ IP4.ADDRESS[1]:                         172.16.15.230/22
 IP4.GATEWAY:                            172.16.12.1
 IP4.DNS[1]:                             192.168.201.2
 IP4.DNS[2]:                             192.168.201.12
-IP4.DOMAIN[1]:                          transmode.s
+IP4.DOMAIN[1]:                          transmode.se
 ```
 Now I know the gateway for the network where my vm resides, and also the subnet from which to find  available ip addresses.
 ### Docker Machine
 Go to local directory of this project:
 ```shell
+[root@pabe-test-machine ~]# exit
+logout
+Connection to 172.16.15.230 closed. 
 $ cd /usr/local/src/docker-macvlan-example
 ```
 I have previously created a docker-machine on the vm pabe_test. It can be listed like so:
