@@ -9,7 +9,8 @@ Give each of the containers a unique ip number, available on the network.
 ## Network Information
 
 ### tnm-vm7 = the physical machine
-My guess is that br0 is the physical network device on tnm-vm7
+First goal: find the gateway on tnm-vm7 network usin nmcli 
+(My guess is that br0 is the physical network device on tnm-vm7):
 ```shell
 $ ssh root@tnm-vm7
 [root@tnm-vm7 ~]# nmcli device show br0 | grep IP4
@@ -21,7 +22,12 @@ IP4.GATEWAY:                            172.16.12.1
 ```
 ### pabe_test = my "private" vm running on tnm-vm7
 Using [this](https://atlas.transmode.se/bitbucket/users/pabe/repos/libvirt-examples/browse/get_domain_ip_address.sh) 
-script I find that the ip address of my virtual machine is 172.16.15.230.
+script I find that the ip address of my virtual machine "pabe_test" is 172.16.15.230.
+
+```shell
+./get_domain_ip_address.sh qemu+ssh://root@tnm-vm7/system pabe_test 172.16.15.0/24 br0
+```
+Verify the vm "pabe_test" has the same gateway:
 ```shell
 $ ssh root@172.16.15.230
 [root@pabe-test-machine ~]# nmcli device show eth0 | grep IP4
@@ -71,7 +77,7 @@ $ create_macvlan.sh
 ```
 Now we can run and attach an XTM docker container to network
 ```shell
-$ docker run --name=node1--net=macvlan70 -d -p 80:80 se-artif-prd.infinera.com/tm3k/trunk-hostenv:latest
+$ docker run --name=node1 --net=macvlan70 -d -p 80:80 se-artif-prd.infinera.com/tm3k/trunk-hostenv:latest
 ```
 Retrieve ip address assigned to docker container:
 ```shell
